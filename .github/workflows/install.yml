@@ -42,10 +42,9 @@ jobs:
     steps:
       - uses: mamba-org/setup-micromamba@v1
         with:
+          environment-name: test
           create-args: >-
             python=${{ matrix.python }}
-          init-shell: >-
-            bash
 
       - run: |
           python -m pip install "${{ matrix.secretflow.name }}==${{ matrix.secretflow.version }}"
